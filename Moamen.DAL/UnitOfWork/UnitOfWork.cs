@@ -13,17 +13,12 @@ namespace Moamen2.DAL.UnitOfWork
     {
         private readonly DbContext _context;
         public IUser Users { get; }
-        public ICategory Category { get; }
-
-        public IUser User => throw new NotImplementedException();
-
-        public ICategory category => throw new NotImplementedException();
-
+        public ICategory Categories { get; }
         public UnitOfWork(DbContext context)
         {
             _context = context;
             Users = new UserRepository(_context);
-            Category = new CategoryRepository(_context);
+            Categories = new CategoryRepository(_context);
         }
         public void Dispose() => _context.Dispose();
         public int save() => _context .SaveChanges();

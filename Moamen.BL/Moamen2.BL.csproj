@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Moamen.Modles\Moamen2.Modles.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Moamen2.DAL.Data;
+using Moamen2.DAL.Repository.IRepo;
+using Moamen2.DAL.UnitOfWork;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Moamen2
@@ -15,7 +17,10 @@ namespace Moamen2
             ));
             builder.Services.AddDbContext<ApplicationDbContext>(option2 =>
             option2.UseSqlServer( b => b.MigrationsAssembly("Moamen2")));
-  
+            
+            //UnitOfWork
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 

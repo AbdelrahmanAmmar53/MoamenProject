@@ -9,8 +9,8 @@ namespace Moamen2.DAL.UnitOfWork
 {
     public interface IUnitOfWork: IDisposable
     {
-        IUser User { get; }
-        ICategory category { get; }
+        IUser Users { get; }
+        ICategory Categories { get; }
         int save();
     }
 }
